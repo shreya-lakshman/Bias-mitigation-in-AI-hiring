@@ -21,7 +21,7 @@ def get_resume_text(candidate):
     """
     domain = candidate.get("domain", "").upper()
     file_name = candidate.get("file_name")
-    resume_path = os.path.join("data", domain, file_name)
+    resume_path = os.path.join("data", "data", "data", domain, file_name)
     
     if not os.path.exists(resume_path):
         print(f"Resume file not found for {file_name} in domain {domain}. Using JSON excerpt.")
