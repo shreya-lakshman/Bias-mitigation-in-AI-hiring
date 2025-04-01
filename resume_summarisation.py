@@ -10,7 +10,7 @@ from sumy.summarizers.text_rank import TextRankSummarizer
 # Configuration
 # =======================================
 JSON_FILE = "resumes_with_demographics.json"
-OUTPUT_SUMMARY_FILE = "resume_summaries_v2.json"
+OUTPUT_SUMMARY_FILE = "resume_summaries.json"
 SUMMARY_SENTENCE_COUNT = 5
 
 def get_resume_text(candidate):
@@ -21,7 +21,7 @@ def get_resume_text(candidate):
     """
     domain = candidate.get("domain", "").upper()
     file_name = candidate.get("file_name")
-    resume_path = os.path.join("updated_data", "data", "data", domain, file_name)
+    resume_path = os.path.join("data", domain, file_name)
     
     if not os.path.exists(resume_path):
         print(f"Resume file not found for {file_name} in domain {domain}. Using JSON excerpt.")

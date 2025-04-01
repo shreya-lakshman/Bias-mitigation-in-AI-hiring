@@ -175,7 +175,7 @@ BATCH_STEP = 1
 # Helper Functions
 # =======================================
 
-def read_dataset(json_file="resume_summaries_v2.json"):
+def read_dataset(json_file="resume_summaries.json"):
     """
     Reads the JSON file containing candidate demographic info and resume summaries.
     Returns a list of candidate dictionaries.
@@ -353,7 +353,7 @@ def save_results(filename, result):
 
 def main():
     try:
-        with open("resume_summaries_v2.json", "r", encoding="utf-8") as f:
+        with open("resume_summaries.json", "r", encoding="utf-8") as f:
             candidates = json.load(f)
     except Exception as e:
         print("Error reading dataset:", e)
